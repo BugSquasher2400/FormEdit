@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>견적서 양식</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="ui error message">
+            <div class="header">필수 안내사항 및 업데이트 안내</div>
+            <p>
+                현재 버전(AP 1.0ver)에서는 견적서가 별도로 저장이 불가능합니다<br>
+                추후 업데이트 시 로그인을 통한 개인 견적서 저장 및 엑셀변환출력이 가능해질 예정입니다.<br><br>
+                본 양식은 위드레브(withreve)에서 무료로 제공되는 무료 인쇄양식입니다<br>
+                <strong>본 간편 견적서는 양식의 기능만 제공하며 사용함으로서 발생하는 분쟁에는 책임을 지지않습니다.</strong>
+            </p>
+        </div>
+        <div class="ui form">
+            <!-- 공급받는자 -->
+            <div class="client">
+                <h4 class="ui dividing header">공급받는자</h4>
+                <div class="item">
+                    <label for="">작성일</label>
+                    <input type="date" name="" class="form__recipient__date">
+                </div>
+                <div class="item">
+                    <label for="">상호</label>
+                    <input type="text" class="form__recipient__name">
+                </div>
+                <div class="item">
+                    <label for="">대표자</label>
+                    <input type="text" class="form__recipient__ceoname">
+                </div>
+                <div class="item">
+                    <label for="">서명 및 인장</label>
+                    <input type="file" id="file" class="form__recipient__signaturel">
+                </div>
+                <div class="item">
+                    <label for="">사업자등록번호</label>
+                    <input type="number" class="form__recipient__number">
+                </div>
+                <div class="item">
+                    <label for="">담당자</label>
+                    <input type="text" class="form__recipient__manager">
+                </div>
+                <div class="item">
+                    <label for="">연락처</label>
+                    <input type="tel" class="form__recipient__tel">
+                </div>
+                <div class="item">
+                    <label for="">주소</label>
+                    <input type="tel" class="form__recipient__address">
+                </div>
+            </div>
+
+            <!-- 공급자 -->
+            <div class="suppliers">
+                <h4 class="ui dividing header">공급하는자</h4>
+                <div class="item">
+                    <label for="">사업자등록번호</label>
+                    <input type="text" class="form__suppliers__number">
+                </div>
+                <div class="item">
+                    <label for="">상호</label>
+                    <input type="text" class="form__suppliers__name">
+                </div>
+                <div class="item">
+                    <label for="">서명 및 인장</label>
+                    <input type="file" id="file" class="form__suppliers__signaturel">
+                </div>
+                <div class="item">
+                    <label for="">대표자</label>
+                    <input type="text" class="form__suppliers__ceoname">
+                </div>
+                <div class="item">
+                    <label for="">담당자</label>
+                    <input type="text" class="form__suppliers_manager">
+                </div>
+                <div class="item">
+                    <label for="">연락처</label>
+                    <input type="tel" class="form__suppliers_tel">
+                </div>
+                <div class="item">
+                    <label for="">주소</label>
+                    <input type="tel" class="form__suppliers_address">
+                </div>
+            </div>
+        </div>
+        <div class="form__btn">
+            <button class="ui secondary button registration">등록</button>
+            <button class="ui secondary button print" onclick="window.print()">인쇄 및 PDF 저장</button>
+            <button class="ui button reset">초기화</button>
+        </div>
+
+    </div>
+    </div>
+
+    </div>
+
+    <!-- 인쇄 폼 -->
+    <div class="detailed-item">
+        <h2 class="detailed-item__title">견적서</h2>
+        <table class="tg">
+            <colgroup>
+                <col style="width: 130px">
+                <col style="width: 200px">
+                <col style="width: 30px">
+                <col style="width: 130px">
+                <col style="width: 40px">
+                <col style="width: 130px">
+                <col style="width: 130px">
+                <col style="width: 30px">
+                <col style="width: 30px">
+                <col style="width: 200px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-0pky">작성날짜:</th>
+                    <td colspan="9" class="tg-0pky detailed-item__date"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="tg-0lax">상호:</th>
+                    <td colspan="3" class="tg-0lax recipient__companyname"></td>
+                    <th rowspan="6" style="vertical-align: middle; text-align: center;" class="tg-0lax">공급자</th>
+                    <th class="tg-0lax">사업자등록번호:</th>
+                    <td colspan="4" class="tg-0lax suppliers__number"></td>
+
+                </tr>
+                <tr>
+                    <th class="tg-0pky">대표자:</th>
+                    <td colspan="1" class="tg-0pky recipient__ceoname"></td>
+                    <td colspan="2" class="tg-0pky recipient__signature">서명/인:</td>
+                    <th class="tg-0pky">대표자</th>
+                    <td colspan="3" class="tg-0pky suppliers__ceoname"></td>
+                    <td class="tg-0pky suppliers__signature">서명/인:</td>
+                </tr>
+                <tr>
+                    <th class="tg-0pky">사업자등록번호:</th>
+                    <td colspan="3" class="tg-0pky recipient__number"></td>
+                    <th class="tg-0pky">상호:</th>
+                    <td colspan="4" class="tg-0pky suppliers__companyname"></td>
+                </tr>
+                <tr>
+                    <th class="tg-0pky">담당자:</th>
+                    <td colspan="3" class="tg-0pky recipient__manager"></td>
+                    <th class="tg-0pky">담당자:</th>
+                    <td colspan="4" class="tg-0pky suppliers__manager"></td>
+                </tr>
+                <tr>
+                    <th class="tg-0pky">연락처:</th>
+                    <td colspan="3" class="tg-0pky recipient__tel"></td>
+                    <th class="tg-0pky">연락처</th>
+                    <td colspan="4" class="tg-0pky suppliers__tel"></td>
+                </tr>
+                <tr>
+                    <th class="tg-0pky">주소</th>
+                    <td colspan="3" class="tg-0pky recipient__address"></td>
+                    <th class="tg-0pky">주소</th>
+                    <td colspan="4" class="tg-0pky suppliers__address"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="">
+            <!-- 합계 -->
+            <div class="total-calculation">
+                <table class="tg">
+                    <colgroup>
+                        <col style="width: 130px">
+                        <col style="width: 895px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="tg-0pky">합계금액</th>
+                            <td class="tg-0pky item-all-sum">0</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="item-list">
+                <!-- 세부품목 -->
+                <table class="tg">
+                    <colgroup>
+                        <col style="width: 60px">
+                        <col style="width: 320px">
+                        <col style="width: 70px">
+                        <col style="width: 130px">
+                        <col style="width: 40px">
+                        <col style="width: 50px">
+                        <col style="width: 50px">
+                        <col style="width: 30px">
+                        <col style="width: 100px">
+                        <col style="width: 115px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="tg-0pky">날짜</th>
+                            <th class="tg-0pky">품명</th>
+                            <th class="tg-0pky">수량</th>
+                            <th class="tg-0pky">단가</th>
+                            <th colspan="3" class="tg-0pky">공급가액</th>
+                            <th colspan="2" class="tg-0pky">세액</th>
+                            <th class="tg-0pky">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody class="item-list__detail">
+                        <tr class="item__sum">
+                            <th colspan="2" class="tg-0pky">합계</th>
+                            <th class="tg-0pky item-count-sum">0</th>
+                            <th class="tg-0pky item-unitprice-sum"></th>
+                            <th colspan="3" class="tg-0pky item-supplyprice-sum">0</th>
+                            <th colspan="2" class="tg-0pky item-tax-sum">0</th>
+                            <th class="tg-0pky item-all-sum">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="ui form">
+                    <h4 class="ui dividing header">제품추가</h4>
+                    <div class="form__item ">
+                        <label for="">품목명</label>
+                        <input type="tel" class="item-name">
+                    </div>
+                    <div class="form__item ">
+                        <label for="">수량</label>
+                        <input type="number" class="item-count">
+                    </div>
+                    <div class="form__item">
+                        <label for="">단가</label>
+                        <input type="number" class="item-unitprice">
+                    </div>
+                    <div class="form__item">
+                        <label for="">공급가</label>
+                        <input type="number" class="item-supplyprice">
+                    </div>
+                    <div class="form__item"></div>
+                    <label for="">세액</label>
+                    <input type="number" class="item-tax">
+                </div>
+                <div class="form__btn">
+                    <button class="ui secondary button item-add">품목추가</button>
+                </div>
+
+                <div class="additional-contents">
+                    <div class="additional-contents__title">
+                        기타사항
+                    </div>
+                    <textarea class="notes"></textarea>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Copyright 2024 withreve All rights reserved</p>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="js/semantic.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/data.js"></script>
+
+</html>
